@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SocketTest {
+public class SocketManager {
 
     public static void main(String[] args){
 
@@ -35,3 +35,4 @@ public class SocketTest {
 
     }
 }
+

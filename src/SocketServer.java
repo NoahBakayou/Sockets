@@ -31,11 +31,11 @@ public class SocketServer implements Runnable {
                 System.out.println("[server] New client connected: " +
                         oSocket.getRemoteSocketAddress());
 
-                // setup a reader
+                // Set up a reader
                 InputStream input = oSocket.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
-                // setup a writer
+                // Set up a writer
                 OutputStream output = oSocket.getOutputStream();
                 PrintWriter writer = new PrintWriter(output, true);
 

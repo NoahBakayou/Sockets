@@ -13,7 +13,7 @@ public class SocketClient {
             //Connecting to server.
             oSocket.connect(new InetSocketAddress(sIP, iPort), 5000);
 
-            //Setup a writer
+            //Set up a writer
             OutputStream output = oSocket.getOutputStream();
             PrintWriter writer = new PrintWriter(output, true);
 
@@ -21,7 +21,7 @@ public class SocketClient {
             writer.println(sMessage);
             writer.flush();
 
-            // setup a reader
+            // Set up a reader
             InputStream input = oSocket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
