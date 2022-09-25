@@ -41,11 +41,26 @@ public class SocketServer implements Runnable {
 
                 //Get message from client.
                 String sReceivedMessage = reader.readLine();
-                System.out.println("[server] message received from client: " + sReceivedMessage);
+//SocketServer
+//When the server receives a message from a client, it should try to parse the comma-delimited message into an array.
+//HINT: Use the sReceivedMessage.split(",") to get a String array of the comma-delimited items.
+                                                            //     here
+                String[] stringArray = sReceivedMessage.split(",");
+                int[] clientArray = new int[stringArray.length];
+                int numberSum = 0;
+                for(int n = 0; n < stringArray.length; n++) { clientArray[n] = Integer.parseInt(stringArray[n]);
+                    numberSum = numberSum + clientArray[n];
+                }
+
+                System.out.println(" Received message, the sum of your numbers are: " +  numberSum);
+                writer.println("Server received the message");
+                writer.flush();
+
+
 
                 // Send reply back to client
-                writer.println("Server received your message: " + sReceivedMessage);
-                writer.flush();
+//                writer.println("Server received your message: " + sReceivedMessage);
+//                writer.flush();
             }
 
         }

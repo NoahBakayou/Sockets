@@ -22,17 +22,27 @@ public class SocketManager {
         Thread oServerThread = new Thread(oServer);
         oServerThread.start();
 
+        SocketClient oClient = new SocketClient();
         while(true){
-            // Get message to send.
-            System.out.print("Enter message: ");
+
+            System.out.println("Enter 3 numbers separated by commas: ");
             String sMessage = new Scanner(System.in).nextLine();
 
-            SocketClient oClient = new SocketClient();
-            String sReceivedMessage =
-                    oClient.connectForOneMessage(sOtherServerIP, iOtherServerPort, sMessage);
-            System.out.println("[client] reply from server: " + sReceivedMessage);
+            String sReplyFromServer = oClient.connectForOneMessage(sOtherServerIP,iOtherServerPort,sMessage);
+            System.out.println("server reply: " + sReplyFromServer);
         }
 
+//        while(true){
+//            // Get message to send.
+//            System.out.print("Enter message: ");
+//            String sMessage = new Scanner(System.in).nextLine();
+//
+//            SocketClient oClient = new SocketClient();
+//            String sReceivedMessage =
+//                    oClient.connectForOneMessage(sOtherServerIP, iOtherServerPort, sMessage);
+//            System.out.println("[client] reply from server: " + sReceivedMessage);
+//        }
+//
     }
 }
 
